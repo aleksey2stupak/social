@@ -27,6 +27,7 @@ body {
     font-size: 14px;
     padding: 10px 3px;
     font-family: inherit;
+    outline: none;
 }
 
 .sign-in__field--bordered {
@@ -68,6 +69,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-family: inherit;
+    font-size: 13px;
 }
 
 .sign-in__title {
@@ -80,4 +82,12 @@ body {
 
 .sign-in__social-name {
     font-family: inherit;
+}
+
+.sign-in__button--primary:hover {
+    background: #f93f77;
+}
+
+.sign-in__button--secondary:hover {
+    background: #262e3a;
 }
