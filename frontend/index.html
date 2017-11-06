@@ -6,13 +6,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="sing-in__container">
         <form class="sign-in__form" action="#" method="post">
-            <input class="sign-in__field" id="login" type="text" name="login" placeholder="Логин"/>
-            <input class="sign-in__field" id="password" type="password" name="password" placeholder="Пароль"/>
-            <input class="sign-in__remember-me" id="remember-me" type="checkbox" name="remember-me">
-            <label for="remember-me">Запомнить меня</label>
-            <input class="sign-in__button" type="submit" value="Войти"/>
+            <h1>BROTHERS</h1>
+            <p>Sign in</p>
+            <input class="sign-in__field sign-in__field--bordered" id="login" type="text" name="username" placeholder="Логин"/>
+            <input class="sign-in__field sign-in__field--bordered" id="password" type="password" name="password" placeholder="Пароль"/>
+            <div class="sign-in__field sign-in__remember-me ">
+                <input id="remember-me" type="checkbox" name="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <input class="sign-in__button sign-in__button--primary" type="submit" value="sign in"/>
+            <span class="sign-in__buttons-divider">or</span>
+            <a class="sign-in__button sign-in__button--secondary" href="#">sign up</a>
         </form>
     </div>
 </body>
