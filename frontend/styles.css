@@ -2,7 +2,7 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
-.sing-in__container {
+.brothers__container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -11,18 +11,17 @@ body {
     align-items: center;
     font-family: inherit;
 }
-.sign-in__form {
+.brothers__form {
     width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid black;
     padding: 60px;
     font-family: inherit;
 }
 
-.sign-in__field {
-    border: none;
+.brothers__field {
+    border: none ;
     margin-bottom: 20px;
     font-size: 14px;
     padding: 10px 3px;
@@ -30,16 +29,16 @@ body {
     outline: none;
 }
 
-.sign-in__field--bordered {
+.brothers__field--bordered {
     border-bottom: 1px solid black;
 }
 
-.sign-in__remember-me {
+.brothers__remember-me {
     display: flex;
     align-items: center;
 }
 
-.sign-in__button {
+.brothers__button {
     height: 45px;
     cursor: pointer;
     font-size: 14px;
@@ -55,16 +54,16 @@ body {
     font-family: inherit;
 }
 
-.sign-in__button--primary {
+.brothers__button--primary {
     background-color: #ff004e;
 }
 
-.sign-in__button--secondary {
+.brothers__button--secondary {
     background-color: #1c222b;
 
 }
 
-.sign-in__buttons-divider {
+.brothers__buttons-divider {
     margin: 10px 0;
     text-align: center;
     text-transform: uppercase;
@@ -72,7 +71,7 @@ body {
     font-size: 13px;
 }
 
-.sign-in__title {
+.brothers__title {
     margin: 27px 0;
     font-weight: normal;
     font-size: 20px;
@@ -80,14 +79,14 @@ body {
     font-family: inherit;
 }
 
-.sign-in__social-name {
+.brothers__social-name {
     font-family: inherit;
 }
 
-.sign-in__button--primary:hover {
+.brothers__button--primary:hover {
     background: #f93f77;
 }
 
-.sign-in__button--secondary:hover {
+.brothers__button--secondary:hover {
     background: #262e3a;
 }

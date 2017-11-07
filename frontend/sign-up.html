@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 <body>
-    Sign Up
+
+<div class="brothers__container">
+    <form class="brothers__form" action="/login" method="post">
+        <h1 class="brothers__social-name" >BROTHERS</h1>
+        <p class="brothers__title">Sign up</p>
+        <input class="brothers__field brothers__field--bordered" id="firstName" type="text" name="firstName" placeholder="First name"/>
+        <input class="brothers__field brothers__field--bordered" id="lastName" type="text" name="lastName" placeholder="Last name"/>
+        <input class="brothers__field brothers__field--bordered" id="login" type="text" name="username" placeholder="Username"/>
+        <input class="brothers__field brothers__field--bordered" id="password" type="password" name="password" placeholder="Password"/>
+        <input class="brothers__field brothers__field--bordered" id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm password"/>
+        <input class="brothers__button brothers__button--primary" type="submit" value="sign up"/>
+        <span class="brothers__buttons-divider">or</span>
+        <a class="brothers__button brothers__button--secondary" href="/">sign in</a>
+    </form>
+</div>
 </body>
 </html>
