@@ -2,8 +2,6 @@ import passport from 'passport';
 import { Strategy } from 'passport-local';
 import { authService } from '../services/auth.service';
 
-export const STRATEGY = 'local';
-
 const USER_NOT_FOUND = 'USER_NOT_FOUND';
 const INVALID_PASSWORD = 'INVALID_PASSWORD';
 
@@ -36,14 +34,11 @@ function auth(username, password, done) {
         });
 }
 
-passport.use(new Strategy(auth));
-
-passport.serializeUser(function(user, done) {
+function serializeUser(user, done) {
     done(null, user.id);
-});
+}
 
-
-passport.deserializeUser(function(id, done) {
+function deserializeUser(id, done) {
     authService.findUserById(id)
         .then(user => {
             if (user == null) {
@@ -54,4 +49,19 @@ passport.deserializeUser(function(id, done) {
         .catch(function(error) {
             done(error);
         });
-});
+}
+
+function createStrategy(strategy) {
+    switch (strategy) {
+        case 'local': return new Strategy(auth);
+        default: {
+            throw new Error(`Unknown auth strategy "${strategy}"`);
+        }
+    }
+}
+
+export default function configurePassport(strategy) {
+    passport.use(createStrategy(strategy));
+    passport.serializeUser(serializeUser);
+    passport.deserializeUser(deserializeUser);
+}

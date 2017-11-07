@@ -1,5 +1,4 @@
-import { db } from '../db';
-import { User } from '../models/user';
+import { User } from '../../../models/user';
 
 let usersCounter = 0;
 

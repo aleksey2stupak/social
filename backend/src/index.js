@@ -5,13 +5,11 @@ import morgan from 'morgan';
 import config from 'nconf';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import session from 'express-session';
-import passport from 'passport';
 import paths from './lib/paths';
 import initializeDb from './db';
 import middleware from './middleware';
-import controllers from './controllers';
-import './configs/passport.config';
+import security from './modules/security';
+import './modules/security/configs/passport.config';
 import api from './api';
 import router from './router';
 
@@ -23,7 +21,7 @@ let app = express();
 app.server = http.createServer(app);
 
 app.use(express.static(paths.base.resolve('..', 'frontend'), {
-    extensions: ['html']
+    extensions: ['html'],
 }));
 
 // logger
@@ -36,16 +34,12 @@ app.use(cors({
 
 app.use(cookieParser());
 app.use(bodyParser());
-app.use(session({ secret: 'SECRET' }));
-
-// Passport:
-app.use(passport.initialize());
-app.use(passport.session());
 
 // connect to db
 initializeDb( db => {
 
-    controllers({ app});
+    // initialize security module
+    security({ config, db, app });
 
 	// internal middleware
 	app.use(middleware({ config, db }));

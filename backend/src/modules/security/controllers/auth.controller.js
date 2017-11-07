@@ -1,5 +1,4 @@
 import passport from 'passport';
-import { STRATEGY } from '../configs/passport.config';
 import { authService } from '../services/auth.service';
 
 const loginHandler = (next, res) => err => {
@@ -8,17 +7,24 @@ const loginHandler = (next, res) => err => {
     } else {
         res.redirect('/feed');
     }
-}
+};
 
-class AuthController {
+export default class AuthController {
+
+    constructor(strategy) {
+        this.strategy = strategy;
+
+        this.login = this.login.bind(this);
+        this.logout = this.logout.bind(this);
+        this.register = this.register.bind(this);
+    }
 
     // Здесь мы проверяем, передаем данные о пользователе в функцию верификации, котоую мы определили выше.
     // Вообще, passport.authenticate() вызывает метод req.logIn автоматически, здесь же я указал это явно.
     // Это добавляет удобство в отладке. Например, можно вставить сюда console.log(), чтобы посмотреть, что происходит...
     // При удачной авторизации данные пользователя будут храниться в req.user
     login(req, res, next) {
-        console.log(`login`);
-        passport.authenticate(STRATEGY,
+        passport.authenticate(this.strategy,
             function(err, user, info) {
                 if (err) {
                     next(err);
@@ -30,7 +36,7 @@ class AuthController {
                 }
                 console.log(`authenticated user:`);
                 console.log(user);
-                req.logIn(user, loginHandler(err, res));
+                req.logIn(user, loginHandler(next, res));
             }
         )(req, res, next);
     };
@@ -45,16 +51,11 @@ class AuthController {
     register(req, res, next) {
         authService.registerUser(req.body.email, req.body.password)
             .then(user => {
-                req.logIn(user, function(err) {
-                    return err
-                        ? next(err)
-                        : res.redirect('/feed');
-                });
+                req.logIn(user, loginHandler(next, res));
             })
             .catch(err => {
                 next(err);
             });
     };
-}
 
-export default new AuthController();
+}
