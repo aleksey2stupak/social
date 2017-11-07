@@ -1,13 +1,14 @@
-import { Router } from 'express';
-import { authenticatedRedirect } from '../middleware/authenticated-redirect';
-import { authenticated } from '../modules/security';
+import paths from '../lib/paths';
+import { RouterBuilder } from './router-builder';
 
 export default ({ config, db }) => {
-    let router = Router();
-
-    // pages router
-    router.get('/', authenticatedRedirect('/feed'));
-    router.get('/feed', authenticated);
-
-    return router;
+    return new RouterBuilder()
+        .configureStatic({
+            root: paths.base.resolve('..', 'frontend'),
+            extensions: ['html'],
+        })
+        .route({path: '/', authenticatedRedirect: '/feed'})
+        .route({path: '/register'})
+        .route({path: '/feed', authenticated: true})
+        .build();
 }

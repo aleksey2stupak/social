@@ -6,7 +6,12 @@ import AuthController from './controllers/auth.controller';
 let active = false;
 
 function configureExpress(app) {
-    app.use(session({ secret: 'SECRET' }));
+    app.use(session({
+        secret: 'i need more beers',
+        resave: false,
+        saveUninitialized: false,
+    }));
+
     // Passport:
     app.use(passport.initialize());
     app.use(passport.session());
@@ -33,14 +38,16 @@ export default function security({app, config, db}) {
     installControllers(app, strategy);
 }
 
-export const authenticated = (req, res, next) => {
+export const authenticated = () => (req, res, next) => {
     if (!active) {
         console.log('Security module was not be activated. Authenticated access to route is disabled.');
         next();
     }
-    if (req.isAuthenticated()) {
-        next();
-    } else {
+    if (!req.isAuthenticated()) {
+        console.log(`Private route "${req.path}" is not allowed for not authenticated user`);
         res.redirect('/');
+        return;
     }
+    console.log('Private route is allowed');
+    next();
 };

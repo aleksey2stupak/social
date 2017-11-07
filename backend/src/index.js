@@ -20,10 +20,6 @@ config.argv()
 let app = express();
 app.server = http.createServer(app);
 
-app.use(express.static(paths.base.resolve('..', 'frontend'), {
-    extensions: ['html'],
-}));
-
 // logger
 app.use(morgan('dev'));
 
@@ -33,7 +29,8 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // connect to db
 initializeDb( db => {
@@ -41,7 +38,7 @@ initializeDb( db => {
     // initialize security module
     security({ config, db, app });
 
-	// internal middleware
+    // internal middleware
 	app.use(middleware({ config, db }));
 
     // page router
