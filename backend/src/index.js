@@ -9,9 +9,9 @@ import paths from './lib/paths';
 import initializeDb from './db';
 import middleware from './middleware';
 import security from './modules/security';
-import './modules/security/configs/passport.config';
 import api from './api';
 import router from './router';
+import { ModuleLoader } from './core/module-loader';
 
 config.argv()
 	.env()
@@ -34,21 +34,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // connect to db
 initializeDb( db => {
+	const moduleLoader = new ModuleLoader(app, config, db);
+
+	const modules = [security];
 
     // initialize security module
-    security({ config, db, app });
+	moduleLoader.loadModules(...modules).then(() => {
+		// internal middleware
+		app.use(middleware({ config, db }));
 
-    // internal middleware
-	app.use(middleware({ config, db }));
+		// page router
+		app.use('/', router({ config, db }));
 
-    // page router
-	app.use('/', router({ config, db }));
+		// api router
+		app.use('/api', api({ config, db }));
 
-	// api router
-	app.use('/api', api({ config, db }));
-
-	app.server.listen(config.get('port'), () => {
-		console.log(`Started on port ${app.server.address().port}`);
+		app.server.listen(config.get('port'), () => {
+			console.log(`Started on port ${app.server.address().port}`);
+		});
 	});
 });
 

@@ -1,11 +1,13 @@
 import passport from 'passport';
 import { authService } from '../services/auth.service';
 
-const loginHandler = (next, res) => err => {
+const loginHandler = (req, res, next) => err => {
     if (err) {
         next(err);
     } else {
-        res.redirect('/feed');
+        const redirectTo = req.session.redirectTo || '/feed';
+        delete req.session.redirectTo;
+        res.redirect(redirectTo);
     }
 };
 
@@ -36,7 +38,7 @@ export default class AuthController {
                 }
                 console.log(`authenticated user:`);
                 console.log(user);
-                req.logIn(user, loginHandler(next, res));
+                req.logIn(user, loginHandler(req, res, next));
             }
         )(req, res, next);
     };
@@ -52,7 +54,7 @@ export default class AuthController {
         console.log(`Register user request received`);
         authService.registerUser(req.body)
             .then(user => {
-                req.logIn(user, loginHandler(next, res));
+                req.logIn(user, loginHandler(req, res, next));
             })
             .catch(err => {
                 next(err);

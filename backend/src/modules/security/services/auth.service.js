@@ -1,7 +1,11 @@
 import { UserStore } from '../../../db';
 import { createUser } from '../../../models/user';
 import { createError } from '../../../models/error';
-import { Errors } from '../models/Errors';
+import { Errors } from '../models/errors';
+
+function getUsers() {
+    return UserStore.getUsers();
+}
 
 function registerUser(registerRequest) {
     const {username, password} = registerRequest;
@@ -50,6 +54,7 @@ function isPasswordValid(user, password) {
 }
 
 export const authService = {
+    getUsers,
     findUserById,
     findUserByName,
     isPasswordValid,

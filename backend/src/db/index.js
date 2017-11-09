@@ -1,4 +1,4 @@
-import { UserStore, initUserStore } from "./UserStore";
+import { UserStore, initUserStore } from "./user-store";
 
 function initDb() {
 	return Promise.all([

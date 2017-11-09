@@ -1,6 +1,5 @@
 import express, { Router } from 'express';
-import { authenticatedRedirect } from '../middleware/authenticated-redirect';
-import { authenticated } from '../modules/security';
+import { authenticated, authenticatedRedirect } from '../modules/security';
 
 function logRoute(route, middlewareNames) {
     if (middlewareNames.length > 0) {

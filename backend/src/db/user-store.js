@@ -2,6 +2,10 @@ import { createUser } from "../models/user";
 
 const users = [];
 
+function getUsers() {
+    return Promise.resolve([...users]);
+}
+
 function findUser(prop, value) {
     const result = users.filter(user => user[prop] === value);
     return result.length === 0 ? null : result[0];
@@ -28,6 +32,7 @@ export function initUserStore() {
 }
 
 export const UserStore = {
+    getUsers,
     findUserById,
     findUserByName,
     saveUser,
