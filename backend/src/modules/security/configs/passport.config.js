@@ -7,12 +7,12 @@ const INVALID_PASSWORD = 'INVALID_PASSWORD';
 
 function auth(username, password, done) {
     console.log(`auth: username="${username}" password="${password}"`);
-    authService.findUserByLogin(username)
+    authService.findUserByName(username)
         .then(user => {
             if (user == null) {
                 return Promise.reject(USER_NOT_FOUND);
             }
-            if (!authService.validPassword(user, password)) {
+            if (!authService.isPasswordValid(user, password)) {
                 return Promise.reject(INVALID_PASSWORD);
             }
             console.log(`user authenticated:`);

@@ -1,52 +1,57 @@
-import { User } from '../../../models/user';
+import { UserStore } from '../../../db';
+import { createUser } from '../../../models/user';
+import { createError } from '../../../models/error';
+import { Errors } from '../models/Errors';
 
-let usersCounter = 0;
-
-function generateId() {
-    usersCounter += 1;
-    return usersCounter;
+function registerUser(registerRequest) {
+    const {username, password} = registerRequest;
+    return validateNewUserRequest(registerRequest)
+        .then(() => {
+            return UserStore.saveUser(createUser(username, password));
+        })
+        .then(user => {
+            //TODO save user data
+            return user;
+        })
+        .then(user => {
+            console.log(`Register user with name "${username}" and password "${password}"`);
+            return user;
+        })
+        .catch(error => {
+            console.log(`Register user with name "${username}" failed with error`);
+            console.log(error);
+            return Promise.reject(error);
+        });
 }
 
-function createUser(login, password) {
-    const id = generateId();
-    return new User(id, login, password);
-}
-
-const users = [
-    createUser('user1', '1'),
-    createUser('user2', '2'),
-];
-
-function findUser(prop, value) {
-    const result = users.filter(user => user[prop] === value);
-    return result.length === 0 ? null : result[0];
-}
-
-function registerUser(login, password) {
-    if (findUser('login', login) == null) {
-        const user = createUser(login, password);
-        users.push(user);
-        return Promise.resolve(user);
-    } else {
-        return Promise.reject(`User with name ${login} already exists`);
+function validateNewUserRequest(registerRequest) {
+    const {username, password, confirmPassword} = registerRequest;
+    if (password !== confirmPassword) {
+        return Promise.reject(createError(Errors.PASSWORD_CONFIRMATION_ERROR, 'Password and password confirmation do not match'));
     }
+    return UserStore.findUserByName(username)
+        .then(user => {
+            if (user != null) {
+                return Promise.reject(createUser(Errors.USER_EXISTS, `User with name ${username} already exists`));
+            }
+        });
 }
 
 function findUserById(id) {
-    return Promise.resolve(findUser('id', id));
+    return UserStore.findUserById(id);
 }
 
-function findUserByLogin(login) {
-    return Promise.resolve(findUser('login', login));
+function findUserByName(name) {
+    return UserStore.findUserByName(name);
 }
 
-function validPassword(user, password) {
+function isPasswordValid(user, password) {
     return user.password === password;
 }
 
 export const authService = {
     findUserById,
-    findUserByLogin,
-    validPassword,
+    findUserByName,
+    isPasswordValid,
     registerUser,
 };

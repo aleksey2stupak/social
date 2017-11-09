@@ -49,7 +49,8 @@ export default class AuthController {
 
     // Регистрация пользователя. Создаем его в базе данных, и тут же, после сохранения, вызываем метод `req.logIn`, авторизуя пользователя
     register(req, res, next) {
-        authService.registerUser(req.body.email, req.body.password)
+        console.log(`Register user request received`);
+        authService.registerUser(req.body)
             .then(user => {
                 req.logIn(user, loginHandler(next, res));
             })
