@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <link rel="stylesheet" href="grid.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 <body>
-    <div class="c-header">
-        <div class="c-header__logo"></div>
-        <div class="c-header__search-container">
+    <div class="row c-header">
+        <div class="col-3 c-header__logo"></div>
+        <div class="col-3 c-header__search-container">
             <input class="c-header__search" type="text" name="search" aria-label="Поиск" autocomplete="off" placeholder="Поиск"/>
         </div>
-        <div class="c-header__profile-link">
-            <span class="c-header__profile-name">Алексей</span>
-            <img class="c-header__profile-photo" src="images/profile-photo-small.jpg" alt="Алексей" />
-            <div class="c-header__profile-arrow"></div>
+        <div class="col-6 c-header__profile-link-container">
+            <div class="c-header__profile-link">
+                <span class="c-header__profile-name">Алексей</span>
+                <img class="c-header__profile-photo" src="images/profile-photo-small.jpg" alt="Алексей" />
+                <div class="c-header__profile-arrow"></div>
+            </div>
         </div>
+
     </div>
     <div class="c-page-content">
         <nav class="c-sidebar">

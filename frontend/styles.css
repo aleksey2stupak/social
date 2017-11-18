@@ -109,7 +109,6 @@ body {
 }
 
 .c-header__logo {
-    width: 250px;
     height: 25px;
     background: url("images/head_logo.svg") no-repeat left center;
     padding-top: 5px;
@@ -146,6 +145,11 @@ body {
 .c-header__search:focus:-moz-placeholder           {color:#fff;}/* Firefox 18- */
 .c-header__search:focus:-ms-input-placeholder      {color:#fff;}
 .c-header__search:focus:placeholder                {color:#fff;}
+
+.c-header__profile-link-container {
+    display: flex;
+    justify-content: flex-end;
+}
 
 .c-header__profile-link {
     display: flex;
