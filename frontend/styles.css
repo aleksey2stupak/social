@@ -2,10 +2,15 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+html {
+    height: 100%;
+}
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'PT Sans', sans-serif;
     font-size: 12.5px;
+    min-height: 100%;
 }
 
 .brothers__container {
@@ -173,3 +178,77 @@ body {
     border-top: 4px solid #fff;
     margin-left: 10px;
 }
+
+.c-page-content {
+    background: #edeef0;
+    flex-grow: 1;
+}
+
+.c-sidebar {
+    width: 250px;
+}
+
+.c-navigation {
+    list-style-type: none;
+    padding: 0;
+}
+
+.c-navigation__element {
+
+}
+
+.c-navigation__element:hover {
+background-color: #e1e5eb;;
+}
+.c-navigation__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.c-navigation__icon {
+    background: no-repeat left center;
+    width: 18px;
+    height: 25px;
+    display: inline-block;
+}
+
+.c-navigation__icon--profile {
+    background-image: url("./images/nav-profile.png");
+}
+
+.c-navigation__icon--news {
+    background-image: url("./images/nav-news.png");
+}
+
+.c-navigation__icon--messages {
+    background-image: url("./images/nav-messages.png");
+}
+
+.c-navigation__icon--friends {
+    background-image: url("./images/nav-friends.png");
+}
+
+.c-navigation__icon--groups {
+    background-image: url("./images/nav-groups.png");
+}
+
+.c-navigation__icon--photo {
+    background-image: url("./images/nav-photo.png");
+}
+
+.c-navigation__icon--music {
+    background-image: url("./images/nav-music.png");
+}
+
+.c-navigation__icon--video {
+    background-image: url("./images/nav-video.png");
+}
+
+.c-navigation__text {
+    height: 28px;
+    line-height: 27px;
+    color: #285473;
+    margin-left: 8px;
+}
+
