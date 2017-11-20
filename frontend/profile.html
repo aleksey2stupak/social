@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="row c-header">
-        <div class="col-3 c-header__logo"></div>
-        <div class="col-3 c-header__search-container">
+        <div class="col-sidebar c-header__logo"></div>
+        <div class="col-narrow c-header__search-container">
             <input class="c-header__search" type="text" name="search" aria-label="Поиск" autocomplete="off" placeholder="Поиск"/>
         </div>
-        <div class="col-6 c-header__profile-link-container">
+        <div class="col-wide c-header__profile-link-container">
             <div class="c-header__profile-link">
                 <span class="c-header__profile-name">Алексей</span>
                 <img class="c-header__profile-photo" src="images/profile-photo-small.jpg" alt="Алексей" />
@@ -23,7 +23,7 @@
 
     </div>
     <div class="row c-page-content">
-        <nav class="col-3 c-sidebar">
+        <nav class="col-sidebar c-sidebar">
             <ul class="c-navigation">
                 <li class="c-navigation__element">
                     <a class="c-navigation__link" href="/profile">
@@ -75,6 +75,12 @@
                 </li>
             </ul>
         </nav>
+        <div class="page-avatar info-block col-narrow">
+            <img class="page-avatar__img" src="./images/page-avatar.jpg" alt="Алексей"/>
+            <a class="page-avatar__edit" href="#">
+                Редактировать
+            </a>
+        </div>
     </div>
 </body>
 </html>
