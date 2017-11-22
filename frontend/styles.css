@@ -263,10 +263,60 @@ background-color: #e1e5eb;;
     box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
 }
 
+.page-avatar__img-wrapper {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.page-avatar__img-wrapper:hover .page-avatar__actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .page-avatar__img {
     min-width: 100%;
     max-width: 100%;
 }
+
+.page-avatar__actions {
+    background-color: rgba(29,32,34,.7);
+    padding: 5px 0;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(100%);
+
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: linear;
+}
+
+.page-avatar__action {
+    border: none;
+    color: #fff;
+    opacity: 0.8;
+    width: 100%;
+    text-align: left;
+    background: none;
+    cursor: pointer;
+    padding: 5px 0 5px 35px;
+    outline: none;
+}
+
+.page-avatar__action:hover {
+    opacity: 1;
+}
+
+.page-avatar__update {
+    background: url("./images/update-avatar.png") no-repeat 10px center;
+
+}
+
+.page-avatar__change-thumbnail {
+    background: url("./images/change-thumbnail.png") no-repeat 10px center;
+}
+
 
 .page-avatar__edit {
     text-align: center;
@@ -283,3 +333,4 @@ background-color: #e1e5eb;;
 .page-avatar__edit:hover {
     background-color: #dfe6ed;
 }
+
