@@ -266,12 +266,6 @@ background-color: #e1e5eb;;
 .page-avatar__img-wrapper {
     position: relative;
     display: flex;
-    overflow: hidden;
-}
-
-.page-avatar__img-wrapper:hover .page-avatar__actions {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .page-avatar__img {
@@ -279,17 +273,29 @@ background-color: #e1e5eb;;
     max-width: 100%;
 }
 
+.page-avatar__actions-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .page-avatar__actions {
-    background-color: rgba(29,32,34,.7);
+    background-color: rgba(0,0,0,.6);
     padding: 5px 0;
     position: absolute;
     bottom: 0;
     opacity: 0;
     transform: translateY(100%);
+    transition: 0.2s all linear;
+}
 
-    transition-duration: 0.2s;
-    transition-property: all;
-    transition-timing-function: linear;
+.page-avatar__img-wrapper:hover .page-avatar__actions {
+    opacity: 1;
+    transform: translateY(0);
+
 }
 
 .page-avatar__action {
@@ -317,7 +323,6 @@ background-color: #e1e5eb;;
     background: url("./images/change-thumbnail.png") no-repeat 10px center;
 }
 
-
 .page-avatar__edit {
     text-align: center;
     display: block;
@@ -334,3 +339,56 @@ background-color: #e1e5eb;;
     background-color: #dfe6ed;
 }
 
+.page-avatar__deletePhoto {
+    background: rgba(0,0,0,.6) url("./images/remove-avatar.png") no-repeat center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    padding: 9px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 2px 0 2px;
+    transition: 0.2s all linear;
+}
+
+.page-avatar__img-wrapper:hover .page-avatar__deletePhoto {
+    opacity: 1;
+}
+
+.page-avatar__deletePhoto::after {
+    content: "Удалить фотографию";
+    visibility: hidden;
+    position: absolute;
+    white-space: nowrap;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 3px;
+    color: #fff;
+    top: 25px;
+    left: -15px;
+    padding: 0px 5px;
+    line-height: 20px;
+    opacity: 0;
+    transition: 0.2s opacity linear;
+}
+
+.page-avatar__deletePhoto::before {
+    content: "";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    position: absolute;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid rgba(0,0,0,.6);
+    top: 21px;
+    left: 5px;
+    opacity: 0;
+    transition: 0.2s opacity linear;
+}
+
+.page-avatar__deletePhoto:hover::before,
+.page-avatar__deletePhoto:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
