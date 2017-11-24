@@ -392,3 +392,22 @@ background-color: #e1e5eb;;
     opacity: 1;
     visibility: visible;
 }
+
+/*Создаем блок с информацией о профиле*/
+.profile-info__section {
+    padding: 0 0 15px;
+    border-bottom: 1px solid #e7e8ec;
+}
+
+.profile-info__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info__fio {
+    flex-grow: 1;
+}
+
+.profile-info__online {
+    color: #939393;
+}
