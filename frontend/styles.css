@@ -421,8 +421,19 @@ margin: 15px 0 0;
     flex-grow: 1;
     font-size: 19px;
     font-weight: normal;
+    padding-left: 4px;
 }
 
 .profile-info__online {
     color: #939393;
+}
+
+.profile-info__status {
+    margin-top: 4px;
+    padding: 4px;
+}
+
+.profile-info__status:hover {
+    background-color: #f0f2f5;
+    cursor: pointer;
 }
