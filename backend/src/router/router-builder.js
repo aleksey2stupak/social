@@ -1,5 +1,6 @@
 import express, { Router } from 'express';
 import { authenticated, authenticatedRedirect } from '../modules/security';
+import { withTemplateEngine } from '../middleware';
 
 function logRoute(route, middlewareNames) {
     if (middlewareNames.length > 0) {
@@ -11,7 +12,8 @@ function logRoute(route, middlewareNames) {
 
 export class RouterBuilder {
 
-    constructor() {
+    constructor(app) {
+        this.app = app;
         this.staticConfig = null;
         this.routes = [];
     }
@@ -23,6 +25,11 @@ export class RouterBuilder {
 
     route(route) {
         this.routes.push(route);
+        return this;
+    }
+
+    hbsRoute(route) {
+        this.routes.push({ ...route, templateEngine: 'hbs' } );
         return this;
     }
 
@@ -47,6 +54,12 @@ export class RouterBuilder {
             if (route.authenticatedRedirect) {
                 middlewareNames.push(['Authenticated Redirect Middleware']);
                 middleware.push(authenticatedRedirect(route.authenticatedRedirect));
+            }
+
+            if (route.templateEngine) {
+                const middlewareFactory = withTemplateEngine(this.app, route.templateEngine);
+                middlewareNames.push([middlewareFactory.middlewareName]);
+                middleware.push(middlewareFactory(route.params));
             }
 
             router.get(route.path, ...middleware);

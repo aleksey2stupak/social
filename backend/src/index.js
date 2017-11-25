@@ -9,9 +9,11 @@ import paths from './lib/paths';
 import initializeDb from './db';
 import middleware from './middleware';
 import security from './modules/security';
+import hbs from './modules/hbs';
 import api from './api';
 import router from './router';
 import { ModuleLoader } from './core/module-loader';
+import { TemplateEngineRegistry } from './core/template-engine-registry';
 
 config.argv()
 	.env()
@@ -19,6 +21,7 @@ config.argv()
 
 let app = express();
 app.server = http.createServer(app);
+app.templateEngineRegistry = new TemplateEngineRegistry();
 
 // logger
 app.use(morgan('dev'));
@@ -32,11 +35,13 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set('views', paths.base.resolve('../frontend/views'));
+
 // connect to db
 initializeDb( db => {
 	const moduleLoader = new ModuleLoader(app, config, db);
 
-	const modules = [security];
+	const modules = [security, hbs];
 
     // initialize security module
 	moduleLoader.loadModules(...modules).then(() => {
@@ -44,7 +49,7 @@ initializeDb( db => {
 		app.use(middleware({ config, db }));
 
 		// page router
-		app.use('/', router({ config, db }));
+		app.use('/', router({ app, config, db }));
 
 		// api router
 		app.use('/api', api({ config, db }));
