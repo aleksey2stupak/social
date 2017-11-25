@@ -1,3 +1,9 @@
+.container {
+    width: 960px;
+    margin:0 auto;
+    padding: 0 15px;
+}
+
 .row {
     display: flex;
     align-items: flex-start;
@@ -9,8 +15,10 @@
 }
 .col-narrow {
     width: 230px;
+    margin-left: 15px;
 }
 
 .col-wide {
     flex-grow: 1;
+    margin-left: 15px;
 }

@@ -8,115 +8,121 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 <body>
-    <div class="row c-header">
-        <div class="col-sidebar c-header__logo"></div>
-        <div class="col-narrow c-header__search-container">
-            <input class="c-header__search" type="text" name="search" aria-label="Поиск" autocomplete="off" placeholder="Поиск"/>
-        </div>
-        <div class="col-wide c-header__profile-link-container">
-            <div class="c-header__profile-link">
-                <span class="c-header__profile-name">Алексей</span>
-                <img class="c-header__profile-photo" src="images/profile-photo-small.jpg" alt="Алексей" />
-                <div class="c-header__profile-arrow"></div>
-            </div>
-        </div>
-
-    </div>
-    <div class="row c-page-content">
-        <nav class="col-sidebar c-sidebar">
-            <ul class="c-navigation">
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/profile">
-                        <span class="c-navigation__icon c-navigation__icon--profile" ></span>
-                        <span class="c-navigation__text">Моя страница</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/news">
-                        <span class="c-navigation__icon c-navigation__icon--news"></span>
-                        <span class="c-navigation__text">Новости</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/messages">
-                        <span class="c-navigation__icon c-navigation__icon--messages"></span>
-                        <span class="c-navigation__text">Сообщения</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/friends">
-                        <span class="c-navigation__icon c-navigation__icon--friends"></span>
-                        <span class="c-navigation__text">Друзья</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/groups">
-                        <span class="c-navigation__icon c-navigation__icon--groups"></span>
-                        <span class="c-navigation__text">Группы</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/photo">
-                        <span class="c-navigation__icon c-navigation__icon--photo"></span>
-                        <span class="c-navigation__text">Фотографии</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/music">
-                        <span class="c-navigation__icon c-navigation__icon--music"></span>
-                        <span class="c-navigation__text">Музыка</span>
-                    </a>
-                </li>
-                <li class="c-navigation__element">
-                    <a class="c-navigation__link" href="/Video">
-                        <span class="c-navigation__icon c-navigation__icon--video"></span>
-                        <span class="c-navigation__text">Видео</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="col-narrow">
-            <div class="info-block page-avatar">
-                <div class="page-avatar__img-wrapper">
-                    <img class="page-avatar__img" src="./images/page-avatar.jpg" alt="Алексей"/>
-                    <div class="page-avatar__actions-wrapper">
-                        <div class="page-avatar__actions">
-                            <button class="page-avatar__action page-avatar__update">Обновить фотографию</button>
-                            <button class="page-avatar__action page-avatar__change-thumbnail">Изменить миниатюру</button>
-                        </div>
-                    </div>
-                    <div class="page-avatar__deletePhoto"></div>
+    <div class="c-header">
+        <div class="container">
+            <div class="row c-header__content">
+                <div class="col-sidebar c-header__logo"></div>
+                <div class="col-narrow c-header__search-container">
+                    <input class="c-header__search" type="text" name="search" aria-label="Поиск" autocomplete="off" placeholder="Поиск"/>
                 </div>
-                <a class="page-avatar__edit" href="#">
-                    Редактировать
-                </a>
-            </div>
-        </div>
-        <div class="col-wide">
-            <div class="info-block profile-info">
-                <div class="profile-info__short">
-                    <div class="profile-info__section">
-                        <div class="profile-info__wrapper">
-                            <h1 class="profile-info__fio">Алексей Ступак</h1>
-                            <div class="profile-info__online">Online</div>
-                        </div>
-                        <div class="profile-info__change-status"></div>
-                        <div class="profile-info__status"></div>
-                    </div>
-                    <div class="profile-info__section">
-
+                <div class="col-wide c-header__profile-link-container">
+                    <div class="c-header__profile-link">
+                        <span class="c-header__profile-name">Алексей</span>
+                        <img class="c-header__profile-photo" src="images/profile-photo-small.jpg" alt="Алексей" />
+                        <div class="c-header__profile-arrow"></div>
                     </div>
                 </div>
-                <div class="profile-info__ext">
-
-                </div>
-                <div class="profile-info__counters">
-
-                </div>
-
             </div>
-
         </div>
     </div>
+    <div class="c-page-content">
+        <div class="container">
+            <div class="row ">
+                <nav class="col-sidebar c-sidebar">
+                    <ul class="c-navigation">
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/profile">
+                                <span class="c-navigation__icon c-navigation__icon--profile" ></span>
+                                <span class="c-navigation__text">Моя страница</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/news">
+                                <span class="c-navigation__icon c-navigation__icon--news"></span>
+                                <span class="c-navigation__text">Новости</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/messages">
+                                <span class="c-navigation__icon c-navigation__icon--messages"></span>
+                                <span class="c-navigation__text">Сообщения</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/friends">
+                                <span class="c-navigation__icon c-navigation__icon--friends"></span>
+                                <span class="c-navigation__text">Друзья</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/groups">
+                                <span class="c-navigation__icon c-navigation__icon--groups"></span>
+                                <span class="c-navigation__text">Группы</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/photo">
+                                <span class="c-navigation__icon c-navigation__icon--photo"></span>
+                                <span class="c-navigation__text">Фотографии</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/music">
+                                <span class="c-navigation__icon c-navigation__icon--music"></span>
+                                <span class="c-navigation__text">Музыка</span>
+                            </a>
+                        </li>
+                        <li class="c-navigation__element">
+                            <a class="c-navigation__link" href="/Video">
+                                <span class="c-navigation__icon c-navigation__icon--video"></span>
+                                <span class="c-navigation__text">Видео</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="col-narrow">
+                    <div class="info-block page-avatar">
+                        <div class="page-avatar__img-wrapper">
+                            <img class="page-avatar__img" src="./images/page-avatar.jpg" alt="Алексей"/>
+                            <div class="page-avatar__actions-wrapper">
+                                <div class="page-avatar__actions">
+                                    <button class="page-avatar__action page-avatar__update">Обновить фотографию</button>
+                                    <button class="page-avatar__action page-avatar__change-thumbnail">Изменить миниатюру</button>
+                                </div>
+                            </div>
+                            <div class="page-avatar__deletePhoto"></div>
+                        </div>
+                        <a class="page-avatar__edit" href="#">
+                            Редактировать
+                        </a>
+                    </div>
+                </div>
+                <div class="col-wide">
+                    <div class="info-block profile-info">
+                        <div class="profile-info__short">
+                            <div class="profile-info__section">
+                                <div class="profile-info__wrapper">
+                                    <h1 class="profile-info__fio">Алексей Ступак</h1>
+                                    <div class="profile-info__online">Online</div>
+                                </div>
+                                <div class="profile-info__change-status"></div>
+                                <div class="profile-info__status"></div>
+                            </div>
+                            <div class="profile-info__section">
+
+                            </div>
+                        </div>
+                        <div class="profile-info__ext">
+
+                        </div>
+                        <div class="profile-info__counters">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

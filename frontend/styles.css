@@ -104,6 +104,9 @@ body {
 
 .c-header {
     background-color: #507299;
+}
+
+.c-header__content {
     display: flex;
     align-items: center;
 }
@@ -394,6 +397,16 @@ background-color: #e1e5eb;;
 }
 
 /*Создаем блок с информацией о профиле*/
+
+.info-block profile-info {
+
+position: relative;
+background: #fff;
+border-radius: 2px;
+box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+margin: 15px 0 0;
+}
+
 .profile-info__section {
     padding: 0 0 15px;
     border-bottom: 1px solid #e7e8ec;
@@ -406,6 +419,8 @@ background-color: #e1e5eb;;
 
 .profile-info__fio {
     flex-grow: 1;
+    font-size: 19px;
+    font-weight: normal;
 }
 
 .profile-info__online {
