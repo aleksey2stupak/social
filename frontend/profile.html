@@ -81,20 +81,117 @@
                         </ul>
                     </nav>
                     <div class="col-narrow">
-                        <div class="info-block page-avatar">
-                            <div class="page-avatar__img-wrapper">
-                                <img class="page-avatar__img" src="./images/page-avatar.jpg" alt="Алексей"/>
-                                <div class="page-avatar__actions-wrapper">
-                                    <div class="page-avatar__actions">
-                                        <button class="page-avatar__action page-avatar__update">Обновить фотографию</button>
-                                        <button class="page-avatar__action page-avatar__change-thumbnail">Изменить миниатюру</button>
+                        <div class="info-block profile-avatar">
+                            <div class="profile-avatar__img-wrapper">
+                                <img class="profile-avatar__img" src="./images/page-avatar.jpg" alt="Алексей"/>
+                                <div class="profile-avatar__actions-wrapper">
+                                    <div class="profile-avatar__actions">
+                                        <button class="profile-avatar__action profile-avatar__update">Обновить фотографию</button>
+                                        <button class="profile-avatar__action profile-avatar__change-thumbnail">Изменить миниатюру</button>
                                     </div>
                                 </div>
-                                <div class="page-avatar__deletePhoto"></div>
+                                <div class="profile-avatar__deletePhoto"></div>
                             </div>
-                            <a class="page-avatar__edit" href="#">
+                            <a class="profile-avatar__edit" href="#">
                                 Редактировать
                             </a>
+                        </div>
+                        <div class="info-block info-block--without-offset profile-friends">
+                            <div class="profile-friends__group">
+                                <div class="profile-friends__group-header">
+                                    <a class="profile-friends__group-name" href="#">
+                                        <span>Друзья</span>
+                                        <span class="profile-friends__group-counter" >111</span>
+                                    </a>
+                                    <a class="profile-friends__update" href="#">
+                                        обновления
+                                    </a>
+                                </div>
+                                <ul class="profile-friends__list">
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Анастасия</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Дарья</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Артем</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Михаил</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Нинель</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Мария</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="profile-friends__group">
+                                <div class="profile-friends__group-header">
+                                    <a class="profile-friends__group-name" href="#">
+                                        <span>Друзья онлайн</span>
+                                        <span class="profile-friends__group-counter" >20</span>
+                                    </a>
+                                </div>
+                                <ul class="profile-friends__list">
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Анастасия</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Дарья</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Артем</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Михаил</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Нинель</span>
+                                        </a>
+                                    </li>
+                                    <li class="profile-friends__friend">
+                                        <a class="profile-friends-friend-link" href="#">
+                                            <img class="profile-friends__friend-avatar" src="./images/friend-avatar.jpg"/>
+                                            <span class="profile-friends__friend-name">Мария</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-wide">
@@ -142,7 +239,26 @@
 
                             </div>
                             <div class="profile-info__counters">
-
+                                <button class="profile-info__counter">
+                                    <div class="profile-info__counter-value">120</div>
+                                    <div class="profile-info__counter-name">друзей</div>
+                                </button>
+                                <button class="profile-info__counter">
+                                    <div class="profile-info__counter-value">109</div>
+                                    <div class="profile-info__counter-name">подписчиков</div>
+                                </button>
+                                <button class="profile-info__counter">
+                                    <div class="profile-info__counter-value">18</div>
+                                    <div class="profile-info__counter-name">фотографий</div>
+                                </button>
+                                <button class="profile-info__counter">
+                                    <div class="profile-info__counter-value">44</div>
+                                    <div class="profile-info__counter-name">видеозаписи</div>
+                                </button>
+                                <button class="profile-info__counter">
+                                    <div class="profile-info__counter-value">3 921</div>
+                                    <div class="profile-info__counter-name">аудиозапись</div>
+                                </button>
                             </div>
                         </div>
                     </div>

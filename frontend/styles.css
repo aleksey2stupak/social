@@ -189,10 +189,10 @@ body {
 .c-page-content {
     background: #edeef0;
     flex-grow: 1;
-    padding: 15px 0;
 }
 
 .c-sidebar {
+    margin-top: 15px;
 }
 
 .c-navigation {
@@ -201,7 +201,6 @@ body {
 }
 
 .c-navigation__element {
-
 }
 
 .c-navigation__element:hover {
@@ -211,6 +210,7 @@ background-color: #e1e5eb;;
     text-decoration: none;
     display: flex;
     align-items: center;
+    outline: none;
 }
 
 .c-navigation__icon {
@@ -260,23 +260,28 @@ background-color: #e1e5eb;;
 }
 
 .info-block {
+    margin-top: 15px;
     padding: 15px;
     background: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
 }
 
-.page-avatar__img-wrapper {
+.info-block--without-offset {
+    padding: 0;
+}
+
+.profile-avatar__img-wrapper {
     position: relative;
     display: flex;
 }
 
-.page-avatar__img {
+.profile-avatar__img {
     min-width: 100%;
     max-width: 100%;
 }
 
-.page-avatar__actions-wrapper {
+.profile-avatar__actions-wrapper {
     position: absolute;
     overflow: hidden;
     width: 100%;
@@ -285,7 +290,7 @@ background-color: #e1e5eb;;
     left: 0;
 }
 
-.page-avatar__actions {
+.profile-avatar__actions {
     background-color: rgba(0,0,0,.6);
     padding: 5px 0;
     position: absolute;
@@ -295,13 +300,13 @@ background-color: #e1e5eb;;
     transition: 0.2s all linear;
 }
 
-.page-avatar__img-wrapper:hover .page-avatar__actions {
+.profile-avatar__img-wrapper:hover .profile-avatar__actions {
     opacity: 1;
     transform: translateY(0);
 
 }
 
-.page-avatar__action {
+.profile-avatar__action {
     border: none;
     color: #fff;
     opacity: 0.8;
@@ -313,20 +318,20 @@ background-color: #e1e5eb;;
     outline: none;
 }
 
-.page-avatar__action:hover {
+.profile-avatar__action:hover {
     opacity: 1;
 }
 
-.page-avatar__update {
+.profile-avatar__update {
     background: url("./images/update-avatar.png") no-repeat 10px center;
 
 }
 
-.page-avatar__change-thumbnail {
+.profile-avatar__change-thumbnail {
     background: url("./images/change-thumbnail.png") no-repeat 10px center;
 }
 
-.page-avatar__edit {
+.profile-avatar__edit {
     text-align: center;
     display: block;
     text-decoration: none;
@@ -338,11 +343,11 @@ background-color: #e1e5eb;;
     border-radius: 2px;
 }
 
-.page-avatar__edit:hover {
+.profile-avatar__edit:hover {
     background-color: #dfe6ed;
 }
 
-.page-avatar__deletePhoto {
+.profile-avatar__deletePhoto {
     background: rgba(0,0,0,.6) url("./images/remove-avatar.png") no-repeat center center;
     position: absolute;
     top: 0;
@@ -355,11 +360,11 @@ background-color: #e1e5eb;;
     transition: 0.2s all linear;
 }
 
-.page-avatar__img-wrapper:hover .page-avatar__deletePhoto {
+.profile-avatar__img-wrapper:hover .profile-avatar__deletePhoto {
     opacity: 1;
 }
 
-.page-avatar__deletePhoto::after {
+.profile-avatar__deletePhoto::after {
     content: "Удалить фотографию";
     visibility: hidden;
     position: absolute;
@@ -375,7 +380,7 @@ background-color: #e1e5eb;;
     transition: 0.2s opacity linear;
 }
 
-.page-avatar__deletePhoto::before {
+.profile-avatar__deletePhoto::before {
     content: "";
     width: 0;
     height: 0;
@@ -390,22 +395,13 @@ background-color: #e1e5eb;;
     transition: 0.2s opacity linear;
 }
 
-.page-avatar__deletePhoto:hover::before,
-.page-avatar__deletePhoto:hover::after {
+.profile-avatar__deletePhoto:hover::before,
+.profile-avatar__deletePhoto:hover::after {
     opacity: 1;
     visibility: visible;
 }
 
 /*Создаем блок с информацией о профиле*/
-
-.info-block profile-info {
-
-position: relative;
-background: #fff;
-border-radius: 2px;
-box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-margin: 15px 0 0;
-}
 
 .profile-info__section {
     padding: 15px 0 15px;
@@ -463,12 +459,13 @@ margin: 15px 0 0;
 .profile-info__property-name {
     width: 165px;
     color: #828282;
+    outline: none;
 }
 
 .profile-info__link {
     color: #2a5885;
     text-decoration: none;
-
+    outline: none;
 }
 
 .profile-info__link:hover {
@@ -485,10 +482,103 @@ margin: 15px 0 0;
     outline: none;
     height: 34px;
     line-height: 32px;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
 .profile-info__show-ext:hover {
     background-color: #f0f2f5;;
+}
+
+.profile-info__counters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+}
+
+.profile-info__counter {
+    text-align: center;
+    cursor: pointer;
+    padding: 0 15px;
+    background: none;
+    border:none;
+    outline: none
+}
+
+.profile-info__counter-value {
+    font-size: 19px;
+    color: #42648b;
+    padding-bottom: 3px;
+}
+
+.profile-info__counter-name {
+    color: #828282;
+}
+
+.profile-info__counter:hover .profile-info__counter-name {
+    color: #2a5885;
+}
+
+/*Создаем блок Друзья на странице профиля*/
+
+.profile-friends__group {
+    border-top: 1px solid #e7e8ec;
+    padding: 15px;
+}
+
+.profile-friends__group-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-friends__group-name {
+    flex-grow: 1;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+}
+
+.profile-friends__group-counter {
+    margin-left: 5px;
+    color: #939393;
+}
+
+.profile-friends__update {
+    text-decoration: none;
+    color: #939393;
+}
+
+.profile-friends__update:hover {
+ text-decoration: underline;
+}
+
+.profile-friends__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-top: 15px;
+    padding: 0;
+
+}
+
+.profile-friends-friend-link {
+    text-decoration: none;
+    color: #2a5885;
+    cursor: pointer;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-friends__friend-avatar {
+    border-radius: 100%;
+}
+
+.profile-friends-friend-link:hover {
+    text-decoration: underline;
+}
+
+.profile-friends__friend-name {
+    margin: 5px 0 10px;
 }
