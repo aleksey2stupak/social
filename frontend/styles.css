@@ -582,3 +582,64 @@ background-color: #e1e5eb;;
 .profile-friends__friend-name {
     margin: 5px 0 10px;
 }
+
+.profile-photos__header-name {
+    cursor: pointer;
+}
+
+.profile-photos__header-counter {
+    margin-left: 5px;
+    color: #939393;
+}
+
+.profile-photos__container {
+    display: flex;
+    margin-top: 15px;
+}
+
+.profile-photos__link {
+    width: 123px;
+    height: 123px;
+    background: no-repeat center center;
+    margin-left: 6px;
+    position: relative;
+}
+
+.profile-photos__link:first-child {
+    margin-left: 0;
+
+}
+
+.profile-photos__delete-photo {
+    background: rgba(0,0,0,.5);
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+}
+
+.profile-photos__link:hover .profile-photos__delete-photo {
+    opacity: 1;
+}
+
+.profile-photos__delete-photo-control {
+    background: url("./images/remove-photo.png") no-repeat center center ;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+}
+
+.profile-photos__delete-photo:hover .profile-photos__delete-photo-control {
+    opacity: 1;
+}
+
+
+.profile-photos__photo {
+    width: 100%;
+}
+
