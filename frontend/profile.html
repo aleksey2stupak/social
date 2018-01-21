@@ -90,7 +90,7 @@
                                         <button class="profile-avatar__action profile-avatar__change-thumbnail">Изменить миниатюру</button>
                                     </div>
                                 </div>
-                                <div class="profile-avatar__deletePhoto"></div>
+                                <div class="profile-avatar__deletePhoto tooltip" data-tooltip="Удалить фотографию"></div>
                             </div>
                             <a class="profile-avatar__edit" href="#">
                                 Редактировать
@@ -271,26 +271,26 @@
                             <div class="profile-photos__container">
                                 <a class="profile-photos__link" href="#" style="background-image: url('./images/profile-photo-1.jpg')">
                                     <div class="profile-photos__delete-photo">
-                                        <div class="profile-photos__delete-photo-control"></div>
+                                        <div class="profile-photos__delete-photo-control tooltip tooltip--top-right" data-tooltip="Скрыть"></div>
                                     </div>
                                 </a>
                                 <a class="profile-photos__link" href="#" style="background-image: url('./images/profile-photo-2.jpg')">
                                     <div class="profile-photos__delete-photo">
-                                        <div class="profile-photos__delete-photo-control"></div>
+                                        <div class="profile-photos__delete-photo-control tooltip tooltip--top-right" data-tooltip="Скрыть"></div>
                                     </div>
                                 </a>
                                 <a class="profile-photos__link" href="#" style="background-image: url('./images/profile-photo-3.jpg')">
                                     <div class="profile-photos__delete-photo">
-                                        <div class="profile-photos__delete-photo-control"></div>
+                                        <div class="profile-photos__delete-photo-control tooltip tooltip--top-right" data-tooltip="Скрыть"></div>
                                     </div>
                                 </a>
                                 <a class="profile-photos__link" href="#" style="background-image: url('./images/profile-photo-4.jpg')">
                                     <div class="profile-photos__delete-photo">
-                                        <div class="profile-photos__delete-photo-control"></div>
+                                        <div class="profile-photos__delete-photo-control tooltip tooltip--top-right" data-tooltip="Скрыть"></div>
                                     </div>
                                 </a>
                             </div>
-                            </div>
+                        </div>
                         <div class="info-block profile-sent-post">
                             <a href="#" class="profile-sent-post__profile-link">
                                 <img src="./images/profile-photo-small.jpg" class="profile-sent-post__profile-link-avatar"/>
@@ -335,6 +335,9 @@
                                                 <a class="post__audio-author" href="#">The Irrepressibles</a>
                                                 <span class="post__audio-name">In This Shirt (Röyksopp Remix)</span>
                                             </div>
+                                            <button class="flat-button post__audio-action post__play-next tooltip tooltip--top-left" data-tooltip="Воспроизвести следующей"></button>
+                                            <button class="flat-button post__audio-action post__add-audio tooltip tooltip--top-left" data-tooltip="Добавить в Мои Аудиозаписи"></button>
+                                            <button class="flat-button post__audio-action post__more-audio-actions"></button>
                                             <div class="post__audio-hq"></div>
                                             <span class="post__audio-duration">3:36</span>
                                         </div>
