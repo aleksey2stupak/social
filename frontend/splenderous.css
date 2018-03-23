@@ -149,19 +149,18 @@ body {
     font-size: 46px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    padding: 0 60px;
+    box-sizing: border-box;
+    align-items: flex-start;
 }
 
-.slider__text--primary {
-    width: 50%;
-    text-align: center;
+.slider__caption {
+    font-size: 56px;
 }
 
-.slider__text--secondary {
+.slider__short-description {
     font-size: 18px;
-    width: 50%;
-    text-align: center;
 }
 
 .slider__arrow-left {
@@ -227,4 +226,33 @@ body {
     background: black;
     opacity: 0.5;
     -webkit-filter: blur(10px);
+}
+
+.latest-projects__list {
+    list-style-type: none ;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project {
+    width: 225px;
+    background: #eeeeee ;
+    transition: all 0.1s linear ;
+}
+
+.project:hover {
+    background: #7e5c88;
+    color: #fff;
+}
+
+.project__title {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.project__description {
+    text-align: center;
+    padding: 10px 0;
 }
