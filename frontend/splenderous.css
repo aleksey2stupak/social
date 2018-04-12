@@ -2,6 +2,11 @@ body {
     margin: 0;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
 .container {
     width: 1140px;
     margin: auto;
@@ -333,6 +338,11 @@ body {
     border: 30px solid #7e5c88;
 }
 
+.section-divider {
+    position: relative;
+    padding-bottom: 50px;
+}
+
 .section-divider::before {
     content: "";
     display: block;
@@ -348,9 +358,11 @@ body {
     -webkit-filter: blur(10px);
 }
 
+.latest-projects {
+    margin-top: 60px;
+}
+
 .latest-projects__list {
-    list-style-type: none ;
-    padding: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -376,4 +388,27 @@ body {
 .project__description {
     text-align: center;
     padding: 10px 0;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+}
+
+.articles {
+    margin-top: 60px;
+}
+
+.profile {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.profile__info {
+    margin-left: 10px;
+}
+
+.profile__link {
+    text-decoration: none;
+    color: #7e5c88;
 }
