@@ -412,3 +412,96 @@ ul {
     text-decoration: none;
     color: #7e5c88;
 }
+
+.footer {
+    margin-top: 60px;
+}
+
+.footer__title {
+    color: #7f7f7f;
+    font-size: 20px;
+}
+
+.footer__section-content {
+    margin-top: 40px;
+}
+
+.latest-tweets__title {
+    color: #7f7f7f;
+}
+
+.latest-tweets__author {
+    margin-top: 5px;
+}
+
+.latest-tweets__text {
+    margin-top: 10px;
+}
+
+.latest-tweets__link {
+    text-decoration: none;
+    color: #7e5c88;
+    margin-top: 30px;
+    float: right;
+}
+
+.quick-links {
+    text-decoration: none;
+    color: #7e5c88;
+}
+
+.quick-links__link {
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.company-info__tel {
+    margin-top: 20px;
+}
+
+.company-info__fax {
+    margin-top: 20px;
+}
+
+.company-info__email {
+    margin-top: 20px;
+}
+
+.social-links__item {
+    margin-top: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+.social-links__link {
+    text-decoration: none;
+    color: #7e5c88;
+    display: flex;
+    align-items: center;
+}
+
+.social-links__icon {
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #cdcdcd;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.social-links__icon:hover {
+    background-color: #7e5c88;
+    transition: all 0.1s linear;
+}
+
+.copyright {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.footer__developer {
+    text-align: right;
+}
