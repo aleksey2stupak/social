@@ -270,3 +270,54 @@ ul {
     color: #000;
     border-color:#000;
 }
+
+.search-job {
+    background-image: url(images/Freelancer/search-job.png);
+    background-repeat: no-repeat;
+    height: 650px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-job__title {
+    font-size: 52px;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.search-job__description {
+    margin-top: 35px;
+    font-size: 21px;
+}
+
+.search-box {
+    width: 735px;
+    border-radius: 62px;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    background: #d02184;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    padding : 20px 45px;
+    border-radius: 57px;
+    cursor: pointer;
+}
+
+.search-job__input {
+    outline: none;
+    border: none;
+    flex-grow: 1;
+    margin-left: 60px;
+    font-size: 14px;
+}
+
