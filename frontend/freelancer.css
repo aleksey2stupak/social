@@ -321,3 +321,28 @@ ul {
     font-size: 14px;
 }
 
+.work-scopes {
+    padding: 100px 0;
+}
+
+.work-scopes__scope {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.h3 {
+    font-size: 26px;
+}
+
+.work-scopes__scope-title {
+    font-size: 21px;
+    color: #1baba1;
+    font-weight: bold;
+}
+
+.work-scopes__scope-description {
+    font-size: 16px;
+    color: #000;
+    margin-top: 25px;
+}
