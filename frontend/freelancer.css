@@ -5,6 +5,7 @@
 body {
     margin: 0;
     font-family: 'Lora', serif;
+    font-size: 16px;
 }
 
 ul {
@@ -219,6 +220,10 @@ ul {
     margin-left: calc(100% / 12);
 }
 
+.offset6 {
+    margin-left: calc(100% / 12 * 6);
+}
+
 .header {
     height: 100px;
     display: flex;
@@ -342,7 +347,38 @@ ul {
 }
 
 .work-scopes__scope-description {
-    font-size: 16px;
     color: #000;
     margin-top: 25px;
+}
+
+.content-about {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    background: url(images/Freelancer/content-about-image.png) no-repeat;
+    background-size: 50%;
+}
+
+
+.content-about__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+
+}
+
+.content-about__text-title {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.content-about__text-description {
+    margin-top: 30px;
+}
+
+.content-about__link {
+    text-decoration: none;
+    color: #1baba1;
+    margin-top: 40px;
+    font-weight: 700;
 }
