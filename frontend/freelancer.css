@@ -224,6 +224,10 @@ ul {
     margin-left: calc(100% / 12 * 2);
 }
 
+.offset3 {
+    margin-left: calc(100% / 12 * 3);
+}
+
 .offset4 {
     margin-left: calc(100% / 12 * 4);
 }
@@ -363,6 +367,13 @@ ul {
     font-size: 26px;
 }
 
+.h4 {
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
 .work-scopes__scope-title {
     font-size: 21px;
     color: #1baba1;
@@ -432,7 +443,6 @@ ul {
     height: 2em;
 }
 
-
 .experts-pool__experts-group-description {
     color: initial;
     margin-top: 30px;
@@ -446,4 +456,85 @@ ul {
 .experts-pool__all-category {
     text-align: center;
     margin-top: 40px;
+}
+
+.works-pool__description {
+    text-align: center;
+}
+
+.works-pool__works-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 30px;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.works-pool__works-stage:hover {
+    box-shadow: 0 0 30px -5px rgba(0,0,0,0.4);
+}
+
+.works-pool__works-stage-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: initial;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.works-pool__works-stage-title:before {
+    display: block;
+    content:"";
+    width:68px;
+    height:2px;
+    background-color:#ff004e;
+    margin-bottom: 30px;
+}
+
+
+.works-pool__works-stage-description {
+    color: initial;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.works-pool__works-stages {
+    margin-top: 60px;
+}
+
+
+.works-pool__works-stage-img {
+    height: 128px;
+}
+
+.price {
+    margin-top: 200px;
+}
+
+.price__description {
+    text-align:  center;
+}
+
+.price__price-plans {
+    margin-top: 60px;
+}
+
+.price__price-plan {
+    color: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 30px;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.price__price-plan:hover {
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.4);
 }
