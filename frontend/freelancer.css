@@ -521,20 +521,72 @@ ul {
     text-align:  center;
 }
 
-.price__price-plans {
+.price__plans {
     margin-top: 60px;
 }
 
-.price__price-plan {
+.price__plan {
     color: initial;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-decoration: none;
-    padding: 30px;
     transition: box-shadow 0.2s ease-out;
 }
 
-.price__price-plan:hover {
+.price__plan:hover {
     box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+.price__plan-header {
+    padding:40px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4fafa;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.price__plan:hover .price__plan-header {
+    background-color: #d02184;
+    color: #fff;
+}
+
+.price__plan-description {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.price__plan-cost-container {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.price__plan-cost {
+    font-size: 55px;
+    margin-right: 5px;
+    color: #d02184;
+    transition: color 0.2s ease-out, font-weigth 0.2s ease-out;
+}
+
+.price__plan:hover .price__plan-cost {
+    color: #fff;
+    font-weight: 700;
+}
+
+.price__plan-body {
+    padding: 0 80px;
+}
+
+.price__plan-element {
+    margin-top: 40px ;
+}
+
+.price__plan-element:last-child {
+    margin-bottom: 40px;
+}
+
+.price__plan:hover .price__plan-element {
+    text-decoration: underline;
 }
