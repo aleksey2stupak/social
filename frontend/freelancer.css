@@ -590,3 +590,60 @@ ul {
 .price__plan:hover .price__plan-element {
     text-decoration: underline;
 }
+
+.comments {
+    margin-top: 100px;
+    background-color: #f4fafa;
+    padding-top: 100px;
+}
+
+.comments__description {
+    text-align:  center;
+}
+
+.comments__comment-list {
+    margin-top: 60px;
+}
+
+.comments__comment {
+    text-align: center;
+    margin-top: 45px;
+    position: relative;
+}
+
+
+.comments__comment-body {
+    transition: background-color  0.2s ease-out, color 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 30px;
+    padding-top: 65px;
+}
+
+.comments__comment:hover .comments__comment-body{
+    background-color: #1baba1;
+    color: #fff;
+}
+
+.comments__comment-author-avatar {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+
+.comments__comment-author {
+    color: #1baba1;
+    font-weight: 700;
+    margin-top: 40px;
+    transition: color 0.2s ease-out;
+}
+
+.comments__comment:hover .comments__comment-author {
+    color: #fff;
+}
+
+.comments__comment-author-company {
+    margin-top: 100px;
+}
