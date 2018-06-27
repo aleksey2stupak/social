@@ -647,3 +647,50 @@ ul {
 .comments__comment-author-company {
     margin-top: 100px;
 }
+
+.footer {
+    margin-top: 180px;
+}
+
+.subscription__text {
+    margin-top: 35px;
+}
+
+.subscription__follow-us {
+    margin-top: 90px;
+}
+
+.subscription__icon {
+    margin: 0 5px;
+}
+
+.subscription__link {
+    text-decoration: none;
+}
+
+.subscription__form {
+    margin-top: 40px;
+    display: flex;
+}
+
+.subscription__address {
+    flex-grow: 1;
+    line-height: 2.5em;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid #9a9a9a;
+}
+
+.subscription__address:focus {
+    border: 1px solid #787878;
+}
+
+.subscription__button {
+    background-color: #ff004e;
+    border: none;
+    color: #fff;
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
