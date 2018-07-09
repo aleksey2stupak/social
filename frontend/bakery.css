@@ -9,7 +9,7 @@
 
 body {
     margin: 0;
-    font-family: 'Lora', serif;
+    font-family: 'Alegreya', serif;
     font-size: 16px;
 }
 
@@ -249,12 +249,82 @@ ul {
     background-image: url("./images/bakery/header.png");
     background-repeat: no-repeat;
     height: 900px;
+    color: #fff;
+
 }
 
+.navigation-background {
+    background-color: rgba( 0, 0, 0, 0.5) ;
+}
+
+.navigation {
+    align-items: center;
+}
 .logo {
     display: inline-block;
     background-image: url("./images/bakery/logo.png");
     background-repeat: no-repeat;
     width: 140px;
     height: 44px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    font-size: 16px;
+}
+
+.menu__element {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu__element:hover {
+    text-decoration: underline;
+}
+
+.menu__divider:before {
+    content: "~";
+    font-weight: 700;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+
+.social__element{
+    margin-left: 30px;
+}
+
+.social__item:first-child .social__element{
+    margin-left: 0;
+}
+
+.social__element--twitter {
+    display: block;
+    background-image: url("./images/bakery/social-twitter.png");
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 13px;
+}
+
+.social__element--facebook{
+    display: block;
+    background-image: url("./images/bakery/social-facebook.png");
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 15px;
+}
+
+.social__element--instagram {
+    display: block;
+    background-image: url("./images/bakery/social-instagram.png");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 16px;
 }
